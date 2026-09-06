@@ -4,28 +4,28 @@
     "year": 2025,
     "citescore": 9.0,
     "citescore_year": 2024,
-    "source": "IEEE"
-  },
-  "Scientific Data": {
-    "impact_factor": 7.2,
-    "year": 2025,
-    "source": "Springer Nature"
+    "source": "https://ieeeaccess.ieee.org/about/bibliometrics/"
   },
   "IEEE Transactions on Smart Grid": {
-    "impact_factor": 9.8,
-    "year": 2024,
-    "source": "Journal Citation Reports"
+    "impact_factor": 10.1,
+    "year": 2026,
+    "source": "https://ieee-pes.org/publications/transactions-on-smart-grid/"
   },
   "IEEE Transactions on Power Systems": {
     "impact_factor": 8.7,
     "year": 2026,
     "citescore": 17.9,
     "citescore_year": 2026,
-    "source": "IEEE Xplore"
+    "source": "https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=59"
+  },
+  "Scientific Data": {
+    "impact_factor": 7.2,
+    "year": 2025,
+    "source": "https://www.nature.com/sdata/journal-impact"
   },
   "IEEE Data Descriptions": {
     "impact_factor": null,
     "citescore": null,
-    "source": "New journal; metric not yet available"
+    "source": "https://open.ieee.org/wp-content/uploads/IEEE-Title-List-August-2025.pdf"
   }
 }
