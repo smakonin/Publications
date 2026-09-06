@@ -1,9 +1,9 @@
 {
-  "updated": "2026-04",
-  "approximate": true,
+  "updated": "2026-09-06",
+  "approximate": false,
   "aggregate": {
-    "citations": 3100,
-    "h_index": 25
+    "citations": 3728,
+    "h_index": 26
   },
   "papers": {}
 }
