@@ -30,6 +30,14 @@ def normalize(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
 
 
+def parse_int(text: str) -> int | None:
+    value = text.replace(",", "").strip()
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def parse_profile(html: str, scholar_id: str) -> dict | None:
     if "not a robot" in html.lower() or "captcha" in html.lower():
         raise RuntimeError("Google Scholar returned a CAPTCHA. Try again later.")
@@ -46,10 +54,8 @@ def parse_profile(html: str, scholar_id: str) -> dict | None:
             continue
         title = title_link.get_text(" ", strip=True)
         count_el = row.select_one("a.gsc_a_ac")
-        raw_count = count_el.get_text(strip=True).replace(",", "") if count_el else "0"
-        try:
-            citations = int(raw_count or 0)
-        except ValueError:
+        citations = parse_int(count_el.get_text(strip=True)) if count_el else 0
+        if citations is None:
             citations = 0
         papers[normalize(title)] = {
             "title": title,
@@ -57,16 +63,33 @@ def parse_profile(html: str, scholar_id: str) -> dict | None:
             "url": urljoin("https://scholar.google.ca", title_link.get("href", "")),
         }
 
+    # Parse Scholar's metric rows by their labels rather than by row order.
+    # The table contains a header row, so positional zip() parsing shifts all
+    # values by one (e.g., citations can incorrectly become the h-index).
     aggregate = {}
-    rows = soup.select("table#gsc_rsb_st tr")
-    names = ("citations", "h_index", "i10_index")
-    for name, row in zip(names, rows):
+    metric_names = {
+        "citations": "citations",
+        "h-index": "h_index",
+        "i10-index": "i10_index",
+    }
+    for row in soup.select("table#gsc_rsb_st tr"):
+        label_el = row.select_one("td.gsc_rsb_sc1")
+        if not label_el:
+            continue
+
+        label = label_el.get_text(" ", strip=True).lower()
+        key = metric_names.get(label)
+        if not key:
+            continue
+
+        # First numeric column is the all-time value; the second is the
+        # five-year/recent value, which this site does not display.
         cells = row.select("td.gsc_rsb_std")
-        if cells:
-            try:
-                aggregate[name] = int(cells[0].get_text(strip=True).replace(",", ""))
-            except ValueError:
-                pass
+        if not cells:
+            continue
+        value = parse_int(cells[0].get_text(strip=True))
+        if value is not None:
+            aggregate[key] = value
 
     # Never overwrite a good local snapshot with an empty or malformed response.
     if "citations" not in aggregate or "h_index" not in aggregate or not papers:
@@ -95,11 +118,15 @@ def main() -> None:
             payload = parse_profile(response.text, scholar_id)
             if payload:
                 OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-                print(
-                    f"Updated {OUT}: {payload['aggregate']['citations']} citations, "
-                    f"h-index {payload['aggregate']['h_index']}, "
-                    f"{len(payload['papers'])} Scholar publications."
+                metrics = payload["aggregate"]
+                summary = (
+                    f"Updated {OUT}: {metrics['citations']} citations, "
+                    f"h-index {metrics['h_index']}"
                 )
+                if "i10_index" in metrics:
+                    summary += f", i10-index {metrics['i10_index']}"
+                summary += f", {len(payload['papers'])} Scholar publications."
+                print(summary)
                 return
             errors.append(f"{scholar_id}: profile did not contain valid Stephen Makonin Scholar data")
         except Exception as exc:
