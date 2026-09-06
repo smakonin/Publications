@@ -7,7 +7,7 @@ Usage:
 
 Google Scholar does not provide a supported public API for this use. The script
 uses the public author profile and may occasionally be blocked by Google. When
-that happens, the website continues to work; only citation counts remain stale.
+that happens, the website continues to work and retains the previous snapshot.
 """
 from __future__ import annotations
 
@@ -20,8 +20,8 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-SCHOLAR_ID = "X75SjF8AAAAJ"
-PROFILE = f"https://scholar.google.ca/citations?user={SCHOLAR_ID}&hl=en&pagesize=100"
+# Current profile ID first, historical profile ID second as a compatibility fallback.
+SCHOLAR_IDS = ("X75SjF8AAAAJ", "cneuo_UAAAAJ")
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "scholar.json"
 
@@ -30,16 +30,15 @@ def normalize(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
 
 
-def main() -> None:
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"
-    }
-    response = requests.get(PROFILE, headers=headers, timeout=30)
-    response.raise_for_status()
-    if "not a robot" in response.text.lower() or "captcha" in response.text.lower():
+def parse_profile(html: str, scholar_id: str) -> dict | None:
+    if "not a robot" in html.lower() or "captcha" in html.lower():
         raise RuntimeError("Google Scholar returned a CAPTCHA. Try again later.")
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
+    profile_name = soup.select_one("#gsc_prf_in")
+    if not profile_name or "stephen makonin" not in profile_name.get_text(" ", strip=True).lower():
+        return None
+
     papers = {}
     for row in soup.select("tr.gsc_a_tr"):
         title_link = row.select_one("a.gsc_a_at")
@@ -47,7 +46,11 @@ def main() -> None:
             continue
         title = title_link.get_text(" ", strip=True)
         count_el = row.select_one("a.gsc_a_ac")
-        citations = int(count_el.get_text(strip=True) or 0) if count_el else 0
+        raw_count = count_el.get_text(strip=True).replace(",", "") if count_el else "0"
+        try:
+            citations = int(raw_count or 0)
+        except ValueError:
+            citations = 0
         papers[normalize(title)] = {
             "title": title,
             "citations": citations,
@@ -56,7 +59,7 @@ def main() -> None:
 
     aggregate = {}
     rows = soup.select("table#gsc_rsb_st tr")
-    names = ["citations", "h_index", "i10_index"]
+    names = ("citations", "h_index", "i10_index")
     for name, row in zip(names, rows):
         cells = row.select("td.gsc_rsb_std")
         if cells:
@@ -65,13 +68,47 @@ def main() -> None:
             except ValueError:
                 pass
 
-    payload = {
+    # Never overwrite a good local snapshot with an empty or malformed response.
+    if "citations" not in aggregate or "h_index" not in aggregate or not papers:
+        return None
+
+    return {
         "updated": dt.date.today().isoformat(),
+        "approximate": False,
+        "scholar_id": scholar_id,
         "aggregate": aggregate,
         "papers": papers,
     }
-    OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Updated {OUT} with {len(papers)} Scholar publications.")
+
+
+def main() -> None:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"
+    }
+
+    errors = []
+    for scholar_id in SCHOLAR_IDS:
+        profile = f"https://scholar.google.ca/citations?user={scholar_id}&hl=en&pagesize=100"
+        try:
+            response = requests.get(profile, headers=headers, timeout=30)
+            response.raise_for_status()
+            payload = parse_profile(response.text, scholar_id)
+            if payload:
+                OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                print(
+                    f"Updated {OUT}: {payload['aggregate']['citations']} citations, "
+                    f"h-index {payload['aggregate']['h_index']}, "
+                    f"{len(payload['papers'])} Scholar publications."
+                )
+                return
+            errors.append(f"{scholar_id}: profile did not contain valid Stephen Makonin Scholar data")
+        except Exception as exc:
+            errors.append(f"{scholar_id}: {exc}")
+
+    raise RuntimeError(
+        "Could not refresh Google Scholar. Existing scholar.json was left unchanged.\n"
+        + "\n".join(errors)
+    )
 
 
 if __name__ == "__main__":
