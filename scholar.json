@@ -1,9 +1,347 @@
 {
   "updated": "2026-09-06",
   "approximate": false,
+  "scholar_id": "X75SjF8AAAAJ",
   "aggregate": {
     "citations": 3728,
-    "h_index": 26
+    "h_index": 26,
+    "i10_index": 46
   },
-  "papers": {}
+  "papers": {
+    "ampds a public dataset for load disaggregation and eco feedback research": {
+      "title": "AMPds: A public dataset for load disaggregation and eco-feedback research",
+      "citations": 515,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:KlAtU1dfN6UC"
+    },
+    "exploiting hmm sparsity to perform online real time nonintrusive load monitoring": {
+      "title": "Exploiting HMM sparsity to perform online real-time nonintrusive load monitoring",
+      "citations": 496,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:Se3iqnhoufwC"
+    },
+    "electricity water and natural gas consumption of a residential house in canada from 2012 to 2014": {
+      "title": "Electricity, water, and natural gas consumption of a residential house in Canada from 2012 to 2014",
+      "citations": 451,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:8k81kl-MbHgC"
+    },
+    "nonintrusive load monitoring nilm performance evaluation a unified approach for accuracy reporting": {
+      "title": "Nonintrusive load monitoring (NILM) performance evaluation: A unified approach for accuracy reporting",
+      "citations": 275,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:u5HHmVD_uO8C"
+    },
+    "wavenilm a causal neural network for power disaggregation from the complex power signal": {
+      "title": "WaveNILM: A causal neural network for power disaggregation from the complex power signal",
+      "citations": 167,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:QIV2ME_5wuYC"
+    },
+    "load disaggregation based on aided linear integer programming": {
+      "title": "Load disaggregation based on aided linear integer programming",
+      "citations": 147,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:qxL8FJ1GzNcC"
+    },
+    "rae the rainforest automation energy dataset for smart grid meter data analysis": {
+      "title": "RAE: The rainforest automation energy dataset for smart grid meter data analysis",
+      "citations": 127,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:ufrVoPGSRksC"
+    },
+    "hue the hourly usage of energy dataset for buildings in british columbia": {
+      "title": "HUE: The hourly usage of energy dataset for buildings in British Columbia",
+      "citations": 103,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:_FxGoFyzp5QC"
+    },
+    "a smarter smart home case studies of ambient intelligence": {
+      "title": "A smarter smart home: Case studies of ambient intelligence",
+      "citations": 103,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:Y0pCki6q_DkC"
+    },
+    "tracegan synthesizing appliance power signatures using generative adversarial networks": {
+      "title": "TraceGAN: Synthesizing appliance power signatures using generative adversarial networks",
+      "citations": 95,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:YOwf2qJgpHMC"
+    },
+    "residential power forecasting using load identification and graph spectral clustering": {
+      "title": "Residential power forecasting using load identification and graph spectral clustering",
+      "citations": 88,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:hqOjcs7Dif8C"
+    },
+    "performance evaluation of techniques for identifying abnormal energy consumption in buildings": {
+      "title": "Performance evaluation of techniques for identifying abnormal energy consumption in buildings",
+      "citations": 83,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:hC7cP41nSMkC"
+    },
+    "towards comparability in non intrusive load monitoring on data and performance evaluation": {
+      "title": "Towards comparability in non-intrusive load monitoring: On data and performance evaluation",
+      "citations": 82,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:4DMP91E08xMC"
+    },
+    "day ahead electricity demand forecasting competition post covid paradigm": {
+      "title": "Day-ahead electricity demand forecasting competition: Post-covid paradigm",
+      "citations": 64,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:TQgYirikUcIC"
+    },
+    "the cognitive power meter looking beyond the smart meter": {
+      "title": "The cognitive power meter: Looking beyond the smart meter",
+      "citations": 63,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:WF5omc3nYNoC"
+    },
+    "efficient sparse matrix processing for nonintrusive load monitoring nilm": {
+      "title": "Efficient sparse matrix processing for nonintrusive load monitoring (NILM)",
+      "citations": 61,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:9yKSN-GCB0IC"
+    },
+    "electricity consumption data sets pitfalls and opportunities": {
+      "title": "Electricity consumption data sets: Pitfalls and opportunities",
+      "citations": 58,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:d1gkVwhDpl0C"
+    },
+    "ev charging profiles and waveforms dataset ev cpw and associated power quality analysis": {
+      "title": "EV charging profiles and waveforms dataset (EV-CPW) and associated power quality analysis",
+      "citations": 46,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:k_IJM867U9cC"
+    },
+    "real time embedded low frequency load disaggregation": {
+      "title": "Real-time embedded low-frequency load disaggregation",
+      "citations": 45,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:IjCSPb-OGe4C"
+    },
+    "mixed initiative for big data the intersection of human visual analytics prediction": {
+      "title": "Mixed-initiative for big data: The intersection of human+ visual analytics+ prediction",
+      "citations": 42,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:IWHjjKOFINEC"
+    },
+    "appliance water disaggregation via non intrusive load monitoring nilm": {
+      "title": "Appliance water disaggregation via non-intrusive load monitoring (NILM)",
+      "citations": 39,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:MXK_kJrjxJIC"
+    },
+    "calculating the carbon footprint of streaming media beyond the myth of efficiency": {
+      "title": "Calculating the carbon footprint of streaming media: Beyond the myth of efficiency",
+      "citations": 38,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:_Qo2XoVZTnwC"
+    },
+    "investigating the switch continuity principle assumed in non intrusive load monitoring nilm": {
+      "title": "Investigating the switch continuity principle assumed in Non-Intrusive Load Monitoring (NILM)",
+      "citations": 34,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:M3ejUd6NZC8C"
+    },
+    "on metrics to assess the transferability of machine learning models in non intrusive load monitoring": {
+      "title": "On metrics to assess the transferability of machine learning models in non-intrusive load monitoring",
+      "citations": 33,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:_kc_bZDykSQC"
+    },
+    "visual c 5 0 developer s guide": {
+      "title": "Visual C++ 5.0: developer's guide",
+      "citations": 33,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:NaGl4SEjCO4C"
+    },
+    "start up creation the smart eco efficient built environment": {
+      "title": "Start-up creation: the smart eco-efficient built environment",
+      "citations": 30,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:dhFuZR0502QC"
+    },
+    "approaches to non intrusive load monitoring nilm in the home": {
+      "title": "Approaches to non-intrusive load monitoring (nilm) in the home",
+      "citations": 24,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:zYLM7Y9cAGgC"
+    },
+    "home occupancy agent occupancy and sleep detection": {
+      "title": "Home occupancy agent: Occupancy and sleep detection",
+      "citations": 24,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:7PzlFSSx8tAC"
+    },
+    "enhancing object detection in dense images adjustable non maximum suppression for single class detection": {
+      "title": "Enhancing object detection in dense images: adjustable non-maximum suppression for single-class detection",
+      "citations": 23,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:D03iK_w7-QYC"
+    },
+    "the affect of lifestyle factors on eco visualization design": {
+      "title": "The affect of lifestyle factors on eco-visualization design",
+      "citations": 23,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:UebtZRa9Y70C"
+    },
+    "inspiring energy conservation through open source metering hardware and embedded real time load disaggregation": {
+      "title": "Inspiring energy conservation through open source metering hardware and embedded real-time load disaggregation",
+      "citations": 23,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:Tyk-4Ss8FVUC"
+    },
+    "investigating the performance gap between testing on real and denoised aggregates in non intrusive load monitoring": {
+      "title": "Investigating the performance gap between testing on real and denoised aggregates in non-intrusive load monitoring",
+      "citations": 22,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:mVmsd5A6BfQC"
+    },
+    "residential power forecasting based on affinity aggregation spectral clustering": {
+      "title": "Residential power forecasting based on affinity aggregation spectral clustering",
+      "citations": 22,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:aqlVkmm33-oC"
+    },
+    "universal non intrusive load monitoring unilm using filter pipelines probabilistic knapsack and labelled partition maps": {
+      "title": "Universal non-intrusive load monitoring (unilm) using filter pipelines, probabilistic knapsack, and labelled partition maps",
+      "citations": 21,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:5nxA0vEk-isC"
+    },
+    "incorporating time of day usage patterns into non intrusive load monitoring": {
+      "title": "Incorporating time-of-day usage patterns into non-intrusive load monitoring",
+      "citations": 20,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:W7OEmFMy1HYC"
+    },
+    "a nonintrusive load monitoring based on multi target regression approach": {
+      "title": "A nonintrusive load monitoring based on multi-target regression approach",
+      "citations": 19,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:mB3voiENLucC"
+    },
+    "tackling the carbon footprint of streaming media final report": {
+      "title": "Tackling the Carbon Footprint of Streaming Media: Final Report",
+      "citations": 18,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:BqipwSGYUEgC"
+    },
+    "inspiring energy conservation through open source power monitoring and in home display": {
+      "title": "Inspiring energy conservation through open source power monitoring and in-home display",
+      "citations": 18,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:YsMSGLbcyi4C"
+    },
+    "a consumer bill of rights for energy conservation": {
+      "title": "A consumer bill of rights for energy conservation",
+      "citations": 17,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:L8Ckcad2t8MC"
+    },
+    "elements of consumption an abstract visualization of household consumption": {
+      "title": "Elements of consumption: an abstract visualization of household consumption",
+      "citations": 17,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:0EnyYjriUFMC"
+    },
+    "an intelligent agent for determining home occupancy using power monitors and light sensors": {
+      "title": "An intelligent agent for determining home occupancy using power monitors and light sensors",
+      "citations": 14,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:UeHWp8X0CEIC"
+    },
+    "short term demand prediction using an ensemble of linearly constrained estimators": {
+      "title": "Short-term demand prediction using an ensemble of linearly-constrained estimators",
+      "citations": 13,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:roLk4NBRz8UC"
+    },
+    "stop exploring bayesian surprise to better train nilm": {
+      "title": "Stop: Exploring bayesian surprise to better train nilm",
+      "citations": 12,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:qjMakFHDy7sC"
+    },
+    "carbonkit designing a personal carbon tracking platform": {
+      "title": "CarbonKit: Designing a personal carbon tracking platform",
+      "citations": 12,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:Wp0gIr-vW9MC"
+    },
+    "impact of level 2 ev charging on phase unbalance in distribution networks": {
+      "title": "Impact of level 2 EV charging on phase unbalance in distribution networks",
+      "citations": 11,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:maZDTaKrznsC"
+    },
+    "increasing the accuracy and speed of universal non intrusive load monitoring unilm using a novel real time steady state block filter": {
+      "title": "Increasing the accuracy and speed of universal non-intrusive load monitoring (UNILM) using a novel real-time steady-state block filter",
+      "citations": 10,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:ZeXyd9-uunAC"
+    },
+    "a recurrent neural network for multisensory non intrusive load monitoring on a raspberry pi": {
+      "title": "A recurrent neural network for multisensory non-intrusive load monitoring on a Raspberry Pi",
+      "citations": 8,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:u-x6o8ySG0sC"
+    },
+    "a design and comparative analysis of a home energy disaggregation system based on a multi target learning framework": {
+      "title": "A design and comparative analysis of a home energy disaggregation system based on a multi-target learning framework",
+      "citations": 7,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:TFP_iSt0sucC"
+    },
+    "transmitting patient vitals over a reliable zigbee mesh network": {
+      "title": "Transmitting patient vitals over a reliable zigbee mesh network",
+      "citations": 6,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:3fE2CSJIrl8C"
+    },
+    "compressive non intrusive load monitoring": {
+      "title": "Compressive non-intrusive load monitoring",
+      "citations": 5,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:2osOgNQ5qMEC"
+    },
+    "cognitive radio technology system evolution": {
+      "title": "Cognitive radio technology: system evolution",
+      "citations": 5,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:hFOr9nPyWt4C"
+    },
+    "descriptor comprehensive ieee research data collections cirdc": {
+      "title": "Descriptor: Comprehensive IEEE research data collections (CIRDC)",
+      "citations": 4,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:b0M2c_1WBrUC"
+    },
+    "descriptor simon fraser university electric vehicle parking dataset sfu evp": {
+      "title": "Descriptor: Simon Fraser University Electric Vehicle Parking Dataset (SFU-EVP)",
+      "citations": 4,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:bFI3QPDXJZMC"
+    },
+    "descriptor bldc hall sensor displacement dataset bldc hsd": {
+      "title": "Descriptor: BLDC Hall Sensor Displacement Dataset (BLDC-HSD)",
+      "citations": 3,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:_xSYboBqXhAC"
+    },
+    "app programming and its use in smart buildings": {
+      "title": "App programming and its use in smart buildings",
+      "citations": 2,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:4TOpqqG69KYC"
+    },
+    "editorial hey google scholar let s calculate the sharability index": {
+      "title": "Editorial: Hey Google Scholar, Let's Calculate the Sharability Index!",
+      "citations": 1,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:CHSYGLWDkRkC"
+    },
+    "editorial enhancing reproducibility through understanding datasets": {
+      "title": "Editorial: Enhancing Reproducibility Through Understanding Datasets",
+      "citations": 1,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:pyW8ca7W8N0C"
+    },
+    "designing pids for reproducible science using time series data": {
+      "title": "Designing PIDs for Reproducible Science Using Time-Series Data",
+      "citations": 1,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:j3f4tGmQtD8C"
+    },
+    "adaptive integration of steady state change features for enhanced multi label energy disaggregation": {
+      "title": "Adaptive Integration of Steady-State Change Features for Enhanced Multi-Label Energy Disaggregation",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:KxtntwgDAa4C"
+    },
+    "editorial data as infrastructure": {
+      "title": "Editorial: Data as Infrastructure",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:UxriW0iASnsC"
+    },
+    "enhanced current balancing between parallel si igbts and sic mosfet by co switching in high power inverters": {
+      "title": "Enhanced Current Balancing Between Parallel Si IGBTs and SiC MOSFET by Co-Switching in High-Power Inverters",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:dshw04ExmUIC"
+    },
+    "identifying ev bad behaviour the parking lot usage efficiency plue metric": {
+      "title": "Identifying EV Bad Behaviour: The Parking Lot Usage Efficiency (PLUE) Metric",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:nb7KW1ujOQ8C"
+    },
+    "the embui protocol designing a merit based ubi to complement agi for human advancement": {
+      "title": "The Embui Protocol: Designing a Merit-Based UBI to Complement AGI for Human Advancement",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:1sJd4Hv_s6UC"
+    },
+    "meta defining the disaggregated component assignation error metric for complex time series signal data": {
+      "title": "Meta: Defining the Disaggregated Component Assignation Error Metric for Complex Time-Series Signal Data",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:EUQCXRtRnyEC"
+    },
+    "editorial special section on covid 19 impact on electrical grid operation analysis and mitigation": {
+      "title": "Editorial Special Section on COVID-19 Impact on Electrical Grid Operation: Analysis and Mitigation",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:RHpTSmoSYBkC"
+    },
+    "dynamic energy management and cost optimization in local grids": {
+      "title": "Dynamic Energy Management and Cost Optimization in Local Grids",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:R3hNpaxXUhUC"
+    },
+    "understanding appliance power consumption without sensors": {
+      "title": "Understanding Appliance Power Consumption Without Sensors",
+      "citations": 0,
+      "url": "https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=X75SjF8AAAAJ&pagesize=100&citation_for_view=X75SjF8AAAAJ:ULOm3_A8WrAC"
+    }
+  }
 }
