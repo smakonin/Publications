@@ -1,0 +1,31 @@
+{
+  "IEEE Access": {
+    "impact_factor": 4.2,
+    "year": 2025,
+    "citescore": 9.0,
+    "citescore_year": 2024,
+    "source": "IEEE"
+  },
+  "Scientific Data": {
+    "impact_factor": 7.2,
+    "year": 2025,
+    "source": "Springer Nature"
+  },
+  "IEEE Transactions on Smart Grid": {
+    "impact_factor": 9.8,
+    "year": 2024,
+    "source": "Journal Citation Reports"
+  },
+  "IEEE Transactions on Power Systems": {
+    "impact_factor": 8.7,
+    "year": 2026,
+    "citescore": 17.9,
+    "citescore_year": 2026,
+    "source": "IEEE Xplore"
+  },
+  "IEEE Data Descriptions": {
+    "impact_factor": null,
+    "citescore": null,
+    "source": "New journal; metric not yet available"
+  }
+}

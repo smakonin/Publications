@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Publications by Prof. Stephen Makonin, PEng — author versions, DOI links, Google Scholar citations, and bibliographic metadata." />
+  <title>Publications · Prof. Stephen Makonin, PEng</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to publications</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="https://makonin.com/" aria-label="Prof. Stephen Makonin home">
+        <img class="brand-photo" src="/images/stephen-makonin.jpg" alt="Stephen Makonin" />
+        <span>Prof. Stephen Makonin, PEng</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://makonin.com/">Home</a>
+        <a class="active" href="./">Publications</a>
+        <a href="publications.bib">BibTeX</a>
+        <a href="https://scholar.google.ca/citations?user=X75SjF8AAAAJ&hl=en">Google Scholar</a>
+        <a href="https://github.com/smakonin/Publications">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-pad">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Research record · author versions · open scholarship</p>
+          <h1>Publications</h1>
+          <p class="lede">A continuously maintained record of my research publications, with links to final publisher versions, author manuscripts, Google Scholar, and reusable BibTeX metadata.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#browse">Browse publications</a>
+            <a class="button" href="publications.bib">Download BibTeX</a>
+            <a class="button" href="https://scholar.google.ca/citations?user=X75SjF8AAAAJ&hl=en">Google Scholar</a>
+          </div>
+        </div>
+        <aside class="summary-card">
+          <p class="section-kicker">Research snapshot</p>
+          <div class="summary-grid">
+            <div><strong id="publication-count">—</strong><span>publications</span></div>
+            <div><strong id="journal-count">—</strong><span>journal articles</span></div>
+            <div><strong id="citation-count">—</strong><span>Scholar citations</span></div>
+            <div><strong id="latest-year">—</strong><span>latest year</span></div>
+          </div>
+          <p class="metadata-note" id="scholar-updated">Google Scholar citation metadata has not yet been refreshed.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="browse" class="section-pad section-muted">
+      <div class="container">
+        <div class="split-heading">
+          <div>
+            <p class="section-kicker">Publication index</p>
+            <h2>Research output</h2>
+          </div>
+          <p class="result-count" id="result-count">Loading publications…</p>
+        </div>
+
+        <div class="filters" aria-label="Publication filters">
+          <label class="search-box">
+            <span>Search</span>
+            <input id="search" type="search" placeholder="Title, author, venue, keyword…" autocomplete="off" />
+          </label>
+          <label>
+            <span>Type</span>
+            <select id="type-filter">
+              <option value="all">All types</option>
+              <option value="article">Journal articles</option>
+              <option value="inproceedings">Conference papers</option>
+              <option value="incollection">Book chapters</option>
+              <option value="book">Books</option>
+              <option value="misc">Other</option>
+            </select>
+          </label>
+          <label>
+            <span>Year</span>
+            <select id="year-filter"><option value="all">All years</option></select>
+          </label>
+        </div>
+
+        <div id="publication-list" class="publication-list" aria-live="polite"></div>
+        <div id="load-error" class="load-error" hidden>
+          <h3>Publication data could not be loaded.</h3>
+          <p>GitHub Pages must serve this page over HTTP/HTTPS so the browser can load <code>publications.bib</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container maintenance-grid">
+        <article class="info-card">
+          <p class="section-kicker">Author versions</p>
+          <h2>Read the manuscript</h2>
+          <p>Where an author manuscript is stored in this repository, an <strong>Author version</strong> button appears beside the final publication link. Add a <code>pdf={...}</code> field to the corresponding BibTeX entry to connect a manuscript.</p>
+        </article>
+        <article class="info-card">
+          <p class="section-kicker">Maintained metadata</p>
+          <h2>Designed to stay current</h2>
+          <p>The publication list comes directly from <code>publications.bib</code>. Journal metrics live in <code>journals.json</code>, while Google Scholar citation counts can be refreshed with the included script.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 Stephen Makonin</p>
+      <p><a href="https://makonin.com/">makonin.com</a> · <a href="publications.bib">BibTeX</a> · <a href="https://github.com/smakonin/Publications">Source</a></p>
+    </div>
+  </footer>
+
+  <script src="publications.js"></script>
+</body>
+</html>
