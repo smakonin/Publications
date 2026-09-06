@@ -73,6 +73,33 @@ function normalizeTitle(s='') {
   return cleanTeX(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
+function isStephenMakonin(name='') {
+  const normalized = cleanTeX(name)
+    .toLowerCase()
+    .replace(/\./g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return /^makonin,\s*(stephen(?:\s+(?:william|w))?|s(?:\s+w)?)\b/.test(normalized)
+    || /^(stephen(?:\s+(?:william|w))?|s(?:\s+w)?)\s+makonin\b/.test(normalized);
+}
+
+function renderAuthors(container, authorField='') {
+  const authors = authorField.split(/\s+and\s+/i).map(cleanTeX).filter(Boolean);
+
+  authors.forEach((name, index) => {
+    if (index > 0) container.appendChild(document.createTextNode(' and '));
+
+    if (isStephenMakonin(name)) {
+      const strong = document.createElement('strong');
+      strong.textContent = name;
+      container.appendChild(strong);
+    } else {
+      container.appendChild(document.createTextNode(name));
+    }
+  });
+}
+
 function venueOf(p) {
   return cleanTeX(p.journal || p.booktitle || p.howpublished || p.publisher || '');
 }
@@ -195,7 +222,7 @@ async function init() {
       const finalUrl = doiUrl(p);
       if (finalUrl) { const a=document.createElement('a'); a.href=finalUrl; a.target='_blank'; a.rel='noopener'; a.textContent=cleanTeX(p.title); h3.appendChild(a); }
       else h3.textContent=cleanTeX(p.title);
-      const authors=document.createElement('p'); authors.className='pub-authors'; authors.textContent=cleanTeX(p.author || '');
+      const authors=document.createElement('p'); authors.className='pub-authors'; renderAuthors(authors, p.author || '');
       const venue=document.createElement('p'); venue.className='pub-venue'; venue.textContent=venueOf(p);
       const badges=document.createElement('div'); badges.className='pub-badges';
       const metrics = journals[venueOf(p)] || {};
