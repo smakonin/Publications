@@ -1,7 +1,7 @@
 const scholarProfile = 'https://scholar.google.ca/citations?user=X75SjF8AAAAJ&hl=en';
 
 function stripBraces(value='') {
-  return value.replace(/^\s*[{"]|[}"]\s*$/g, '').trim();
+  return value.replace(/^\s*[{\"]|[}\"]\s*$/g, '').trim();
 }
 
 function parseBibtex(text) {
@@ -74,7 +74,30 @@ function normalizeTitle(s='') {
 }
 
 function venueOf(p) {
-  return cleanTeX(p.journal || p.booktitle || p.publisher || p.note || '');
+  return cleanTeX(p.journal || p.booktitle || p.howpublished || p.publisher || '');
+}
+
+function typeLabel(p) {
+  if (p.type === 'article') return 'Journal';
+  if (p.type === 'inproceedings') return 'Conference';
+  if (p.type === 'incollection') return 'Book chapter';
+  if (p.type === 'book') return 'Book';
+
+  const subtype = cleanTeX(p.note || '');
+  return subtype ? `Other · ${subtype}` : 'Other';
+}
+
+function aggregateNumber(aggregate={}, ...keys) {
+  for (const key of keys) {
+    if (!(key in aggregate)) continue;
+    const raw = aggregate[key];
+    if (typeof raw === 'number' && Number.isFinite(raw)) return raw;
+    if (typeof raw === 'string') {
+      const parsed = Number(raw.replace(/,/g, '').trim());
+      if (Number.isFinite(parsed)) return parsed;
+    }
+  }
+  return null;
 }
 
 function doiUrl(p) {
@@ -129,9 +152,20 @@ async function init() {
 
   document.querySelector('#publication-count').textContent = publications.length;
   document.querySelector('#journal-count').textContent = publications.filter(p => p.type === 'article' && p.journal).length;
-  document.querySelector('#latest-year').textContent = years[0] || '—';
-  if (scholar.aggregate?.citations != null) document.querySelector('#citation-count').textContent = Number(scholar.aggregate.citations).toLocaleString();
-  if (scholar.updated) document.querySelector('#scholar-updated').textContent = `Google Scholar citation counts refreshed ${scholar.updated}.`;
+
+  const citations = aggregateNumber(scholar.aggregate, 'citations', 'Citations');
+  const hIndex = aggregateNumber(scholar.aggregate, 'h_index', 'h-index', 'hIndex');
+  document.querySelector('#citation-count').textContent = citations === null ? '—' : citations.toLocaleString();
+  document.querySelector('#h-index-count').textContent = hIndex === null ? '—' : hIndex.toLocaleString();
+
+  const scholarUpdated = document.querySelector('#scholar-updated');
+  if (scholar.updated) {
+    scholarUpdated.textContent = scholar.approximate
+      ? `Google Scholar snapshot ${scholar.updated}; run the updater for exact current values.`
+      : `Google Scholar citation counts refreshed ${scholar.updated}.`;
+  } else if (citations !== null || hIndex !== null) {
+    scholarUpdated.textContent = 'Google Scholar snapshot; run the updater to refresh current values.';
+  }
 
   const search = document.querySelector('#search');
   const typeFilter = document.querySelector('#type-filter');
@@ -144,7 +178,7 @@ async function init() {
     const type = typeFilter.value;
     const year = yearFilter.value;
     const filtered = publications.filter(p => {
-      const hay = [p.title,p.author,venueOf(p),p.key,p.keywords,p.year].map(cleanTeX).join(' ').toLowerCase();
+      const hay = [p.title,p.author,venueOf(p),p.note,p.key,p.keywords,p.year].map(cleanTeX).join(' ').toLowerCase();
       return (!q || hay.includes(q)) && (type === 'all' || p.type === type) && (year === 'all' || p.year === year);
     });
     list.innerHTML = '';
@@ -168,8 +202,8 @@ async function init() {
       if (metrics.impact_factor) badges.appendChild(makeBadge(`Impact Factor ${metrics.impact_factor}${metrics.year ? ` (${metrics.year})` : ''}`, true));
       if (metrics.citescore) badges.appendChild(makeBadge(`CiteScore ${metrics.citescore}${metrics.citescore_year ? ` (${metrics.citescore_year})` : ''}`, true));
       const s = scholar.papers?.[normalizeTitle(p.title)];
-      if (s?.citations != null) badges.appendChild(makeBadge(`${Number(s.citations).toLocaleString()} citations`, true));
-      badges.appendChild(makeBadge(p.type === 'article' ? 'Journal' : p.type === 'inproceedings' ? 'Conference' : p.type === 'incollection' ? 'Book chapter' : p.type === 'book' ? 'Book' : 'Other'));
+      if (s?.citations != null && Number.isFinite(Number(s.citations))) badges.appendChild(makeBadge(`${Number(s.citations).toLocaleString()} citations`, true));
+      badges.appendChild(makeBadge(typeLabel(p)));
       const actions=document.createElement('div'); actions.className='pub-actions';
       if (finalUrl) actions.appendChild(action(p.doi ? 'Final publication / DOI ↗' : 'Final publication ↗', finalUrl, true));
       if (p.pdf) actions.appendChild(action('Author version', cleanTeX(p.pdf)));
