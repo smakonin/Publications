@@ -1,5 +1,9 @@
 {
-  "updated": null,
-  "aggregate": {},
+  "updated": "2026-04",
+  "approximate": true,
+  "aggregate": {
+    "citations": 3100,
+    "h_index": 25
+  },
   "papers": {}
 }
